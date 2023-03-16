@@ -3,23 +3,23 @@
 name: Node.js CI
 
 on:
- push:
- branches: [ main ]
- pull_request:
-  branches: [ main ]
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
   jobs:
-   uild:
+    build:
 
-   runs-on: ubuntu-latest
+      runs-on: ubuntu-latest
 
-   steps:
-    - uses: actions/checkout@v2
-    - uses: bounceapp/render-action@0.6.0
-   with:
-    render-token: ${{secrets.RENDER_API_KEY}}
-    github-token: ${{Secrets.ACC_API_KEY}}
-    service-id: "srv-cg9dqi4eooghng7o0qig?key=8SCTuDdvV64"
-    retries: 20
-    wait: 16000
-    sleep: 30000
+      steps:
+      - uses: actions/checkout@v2
+      - uses: bounceapp/render-action@0.6.0
+        with:
+          render-token: ${{secrets.RENDER_API_KEY}}
+          github-token: ${{Secrets.ACC_API_KEY}}
+          service-id: "srv-cg9dqi4eooghng7o0qig?key=8SCTuDdvV64"
+          retries: 20
+          wait: 16000
+          sleep: 30000
