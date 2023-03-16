@@ -8,16 +8,16 @@ app.set('view engine', 'hbs');
 app.use(express.static('public'));
 
 
-app.get('/bmi', function (request, response) {
-    res.sendFile(__dirname + "/" + "bmi.hbs");
-});
+app.get('/', function (request, response) {
+    response.render('bmi.hbs');
+})
 
 app.post('/process-bmi', urlEncodedParser, function(req, res) {
     var Weight = parseFloat(req.body.Weight);
     var Height = parseFloat(req.body.Height);
     var bmi = Weight / (Height * Height);
 
-    bmi = bmi.toFixed();
+    bmi = bmi.toFixed(); 
 
     req_name = req.body.Name;
     
@@ -44,4 +44,4 @@ app.post('/process-bmi', urlEncodedParser, function(req, res) {
 
 app.listen(3000, function() {
     console.log("Server Started on Port 3000");
-})
+});
