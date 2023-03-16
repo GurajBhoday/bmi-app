@@ -44,4 +44,4 @@ app.post('/process-bmi', urlEncodedParser, function(req, res) {
 
 
 app.listen(port);
-    console.log(`Server Started on Port ${port}`);
+console.log(`Server Started on Port ${port}`);
