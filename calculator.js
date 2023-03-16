@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 const urlEncodedParser =bodyParser.urlencoded({extended: false});
+const port = process.env.PORT || 3000;
 
 app.set('views' , 'views');
 app.set('view engine', 'hbs');
@@ -42,6 +43,5 @@ app.post('/process-bmi', urlEncodedParser, function(req, res) {
 })
 
 
-app.listen(3000, function() {
-    console.log("Server Started on Port 3000");
-});
+app.listen(port);
+    console.log(`Server Started on Port ${port}`);
